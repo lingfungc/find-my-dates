@@ -6,6 +6,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :users, only: [:index] do
+    member do
+      post :follow
+      post :unfollow
+    end
+  end
+
   root to: "public#home"
 
   get "browse", to: "browse#browse", as: :broswe
