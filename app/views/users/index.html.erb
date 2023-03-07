@@ -1,0 +1,18 @@
+<h1>This is User#Index with User ID <%= current_user.id %></h1>
+
+<% @users.each do |user| %>
+  <%= user.email %>
+  <% if current_user.is_following?(user.id) %>
+    <%#= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
+    <form action="/users/<%= user.id %>/unfollow" method="post" id="" class="">
+      <input type="text" name="unfollow_user" value="<%= user.id %>" id="" class="">
+      <input type="submit" name="commit" value="Unfollow" class="">
+    </form>
+  <% else %>
+    <%#= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+    <form action="/users/<%= user.id %>/follow" method="post" id="" class="">
+      <input type="text" name="follow_user" value="<%= user.id %>" id="" class="">
+      <input type="submit" name="commit" value="Follow" class="">
+    </form>
+  <% end %>
+<% end %>
