@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   root to: "public#home"
 
-  get "browse", to: "browse#browse", as: :broswe
+  get "browse", to: "browse#browse", as: :browse
 end
