@@ -2,12 +2,6 @@
 
 <div class="my-4"></div>
 
-<% @users.each do |user| %>
-  <div class="user-<%= user.id %>">
-    <p><%= user.first_name %> <%= user.last_name %></p>
-  </div>
-<% end %>
-
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -20,6 +14,13 @@
       <img src="..." class="d-block w-100" alt="...">
     </div> %>
   </div>
+
+  <% @users.each do |user| %>
+    <div class="user-<%= user.id %>">
+      <p><%= user.first_name %> <%= user.last_name %></p>
+    </div>
+  <% end %>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
